@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+      <!-- To ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Links</title>
+
+        <!-- CDN link to Bootstrap 4: -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <link rel="stylesheet" href="styles.css">
+
+  <style>
+        body {
+            background-image:url(images/background_links.jpg); 
+            background-size: cover; /* Ensures the image covers the whole body */
+            background-position: center; /* Centers the image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Custom container for this page */
+        .link-container {
+            background-color: transparent; 
+            backdrop-filter: blur(32px); /* Glass effect */   
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            max-width: 720px; /* Smaller max-width for a more compact layout */
+            width: 100%; /* Ensure responsiveness */
+            padding: 20px; /* Padding inside the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Optional shadow for effect */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        /* Responsive adjustment for smaller screens */
+        @media (max-width: 768px) {
+            .contact-container {
+                width: 90%; /* Adjust for smaller screens */
+            }
+        }
+    </style>
+
+<body>
+    <div class="link-container">
+        <p>
+            <ul>
+                <li style="color: aliceblue;">Digital Learning Hub <a href="https://www.dlh.lu" target="_blank"> dlh.lu</dlh></a> </li> 
+                <li style="color: aliceblue;">W3Schools <a href="https://www.w3schools.com/" target="_blank"> w3schools.com</a></li>
+                <li style="color: aliceblue;">Free Frontend <a href="https://freefrontend.com" target="_blank"> freefrontend.com</a></li>
+                <li style="color: aliceblue;">Free Images <a href="https://pixabay.com/" target="_blank"> pixabay.com</a></li>
+            </ul>
+        </p>
+    </div>
+</body>
