@@ -1,9 +1,9 @@
-let randomNumber;
-let attempts = 0;
-
 // Retrieve user information from localStorage
 const userName = localStorage.getItem("userName");
 const userCompany = localStorage.getItem("userCompany");
+
+console.log("Retrieved userName:", userName);  // Debugging log
+console.log("Retrieved userCompany:", userCompany);  // Debugging log
 
 // This function will set the greeting message.
 function setGreeting() {
@@ -11,7 +11,7 @@ function setGreeting() {
     if (userName && userCompany) {
         greetingElement.textContent = `Hello, ${userName} from ${userCompany}!`;
     } else {
-        greetingElement.textContent = 'Hello !';
+        greetingElement.textContent = 'Hello, Guest!';
     }
 }
 
@@ -67,7 +67,7 @@ function processGuess() {
     guessHistory.innerHTML += `<p>Attempt ${attempts}: ${userGuess} - ${resultString}</p>`;
 
     if (correctPositions === 4) {
-        resultDisplay.textContent = `Congratulations, you guessed the number in ${attempts} attempts!`;
+        resultDisplay.textContent = `Congratulations, ${userName}! You guessed it in ${attempts} attempts!`;
         guessButton.disabled = true;
         restartButton.style.display = 'block';
     }
@@ -90,3 +90,7 @@ setGreeting();
 
 // Start the game when the page loads
 startGame();
+
+// Start the game when the page loads
+startGame();
+
