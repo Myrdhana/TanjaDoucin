@@ -28,7 +28,31 @@ if (!localStorage.getItem('promptSequenceShown')) {
         localStorage.setItem('promptSequenceShown', 'true');
     }
 }
-
-
 // Uncomment this line to clear localStorage for testing purposes
 // localStorage.clear();
+function saveUserDataToStorage(userName, userCompany) {
+    const date = new Date().toISOString(); // Get the current date and time in ISO format
+
+    const userData = {
+        date: date,
+        name: userName,
+        company: userCompany
+    };
+
+    // Retrieve existing data from localStorage (if any)
+    let existingData = JSON.parse(localStorage.getItem('userData')) || [];
+
+    // Add new entry to the data array
+    existingData.push(userData);
+
+    // Save the updated data back to localStorage
+    localStorage.setItem('userData', JSON.stringify(existingData));
+}
+
+// Save user data after prompt
+const userName = prompt("Please enter your name:");
+const userCompany = prompt("Please enter your company name:");
+
+if (userName && userCompany) {
+    saveUserDataToStorage(userName, userCompany);
+}
