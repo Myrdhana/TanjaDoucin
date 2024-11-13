@@ -11,7 +11,7 @@ function setGreeting() {
     if (userName && userCompany) {
         greetingElement.textContent = `Hello, ${userName} from ${userCompany}!`;
     } else {
-        greetingElement.textContent = 'Hello, Guest!';
+        greetingElement.textContent = 'Hello !';
     }
 }
 
@@ -67,7 +67,7 @@ function processGuess() {
     guessHistory.innerHTML += `<p>Attempt ${attempts}: ${userGuess} - ${resultString}</p>`;
 
     if (correctPositions === 4) {
-        resultDisplay.textContent = `Congratulations, ${userName}! You guessed it in ${attempts} attempts!`;
+        resultDisplay.textContent = `Congratulations, you guessed the number in ${attempts} attempts!`;
         guessButton.disabled = true;
         restartButton.style.display = 'block';
     }
