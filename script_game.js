@@ -91,6 +91,4 @@ setGreeting();
 // Start the game when the page loads
 startGame();
 
-// Start the game when the page loads
-startGame();
 
