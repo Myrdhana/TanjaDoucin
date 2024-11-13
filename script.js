@@ -29,7 +29,8 @@ if (!localStorage.getItem('promptSequenceShown')) {
     }
 }
 // Uncomment this line to clear localStorage for testing purposes
-// localStorage.clear();
+ localStorage.clear();
+
 function saveUserDataToStorage(userName, userCompany) {
     const date = new Date().toISOString(); // Get the current date and time in ISO format
 
