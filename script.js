@@ -29,4 +29,4 @@ if (!localStorage.getItem('promptSequenceShown')) {
 }
 
 // Uncomment this line to clear localStorage for testing purposes
-// localStorage.clear();
+localStorage.clear();
