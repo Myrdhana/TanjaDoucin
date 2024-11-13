@@ -1,17 +1,13 @@
 // Retrieve user information from localStorage
-const userName = localStorage.getItem("userName");
-const userCompany = localStorage.getItem("userCompany");
+let userName = localStorage.getItem("userName");
+let userCompany = localStorage.getItem("userCompany");
 
-console.log("Retrieved userName:", userName);  // Debugging log
-console.log("Retrieved userCompany:", userCompany);  // Debugging log
-
-// This function will set the greeting message.
+// Function to set the greeting based on user info
 function setGreeting() {
-    const greetingElement = document.getElementById('greeting');
     if (userName && userCompany) {
-        greetingElement.textContent = `Hello, ${userName} from ${userCompany}!`;
+        document.getElementById('greeting').textContent = `Hello, ${userName} from ${userCompany}!`;
     } else {
-        greetingElement.textContent = 'Hello, Guest!';
+        document.getElementById('greeting').textContent = 'Hello!';
     }
 }
 
@@ -85,10 +81,6 @@ guessInput.addEventListener('keypress', (event) => {
 
 restartButton.addEventListener('click', startGame);
 
-// Set greeting on page load
-setGreeting();
-
 // Start the game when the page loads
 startGame();
-
 
