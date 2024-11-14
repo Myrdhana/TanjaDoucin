@@ -1,18 +1,19 @@
-// Retrieve user data from localStorage
-const userName = localStorage.getItem("userName");
-const userCompany = localStorage.getItem("userCompany");
-
 let randomNumber;
 let attempts = 0;
+let playerName;
 
 function startGame() {
-    randomNumber = String(Math.floor(Math.random() * 9000) + 1000); // Generates a 4-digit number
+    playerName = localStorage.getItem("userName");
+    let userCompany = localStorage.getItem("userCompany");
+
+    if (playerName && userCompany) {
+        document.getElementById('greeting').textContent = `Hello, ${playerName} from ${userCompany}! Let's play.`;
+    } else {
+        document.getElementById('greeting').textContent = 'Hello! Let’s play.';
+    }
+
+    randomNumber = String(Math.floor(Math.random() * 9000) + 1000);
     attempts = 0;
-
-    // Display personalized greeting
-    document.getElementById('greeting').textContent = `Hello, ${userName || "Player"} from ${userCompany || "your company"}!`;
-
-    // Reset game elements
     document.getElementById('result').textContent = '';
     document.getElementById('guessButton').disabled = false;
     document.getElementById('restartButton').style.display = 'none';
@@ -37,26 +38,41 @@ function processGuess() {
 
     let resultArray = Array(4).fill('❌');
     let correctPositions = 0;
+    let checkedIndices = [];
 
-    // Check for correct positions
+    // First pass: Check for correct digits in the correct positions
     for (let i = 0; i < 4; i++) {
         if (userGuess[i] === randomNumber[i]) {
             resultArray[i] = '✅';
             correctPositions++;
+            checkedIndices.push(i);  // Mark this index as checked
         }
     }
 
-    // Check for correct digits in wrong positions
+    // Second pass: Check for correct digits in wrong positions, without repeating counts for same digit
     for (let i = 0; i < 4; i++) {
         if (resultArray[i] === '❌' && randomNumber.includes(userGuess[i])) {
-            resultArray[i] = '🟡';
+            let wrongPosIndex = randomNumber.indexOf(userGuess[i]);
+
+            // Find an available matching digit not already marked
+            while (checkedIndices.includes(wrongPosIndex) && wrongPosIndex !== -1) {
+                wrongPosIndex = randomNumber.indexOf(userGuess[i], wrongPosIndex + 1);
+            }
+
+            // Only mark as correct digit in wrong position if a new position is found
+            if (wrongPosIndex !== -1 && !checkedIndices.includes(wrongPosIndex)) {
+                resultArray[i] = '🟡';
+                checkedIndices.push(wrongPosIndex);
+            }
         }
     }
 
-    guessHistory.innerHTML += `<p>Attempt ${attempts}: ${userGuess} - ${resultArray.join('')}</p>`;
+    // Display results
+    const resultString = resultArray.join('');
+    guessHistory.innerHTML += `<p>Attempt ${attempts}: ${userGuess} - ${resultString}</p>`;
 
     if (correctPositions === 4) {
-        resultDisplay.textContent = `Congratulations, ${userName || "Player"}! You guessed it in ${attempts} attempts!`;
+        resultDisplay.textContent = `Congratulations, ${playerName}! You guessed it in ${attempts} attempts!`;
         guessButton.disabled = true;
         restartButton.style.display = 'block';
     }
@@ -72,4 +88,4 @@ guessInput.addEventListener('keypress', (event) => {
 });
 restartButton.addEventListener('click', startGame);
 
-startGame();  // Start the game when the page loads
+startGame();
