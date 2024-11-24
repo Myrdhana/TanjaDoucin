@@ -33,10 +33,10 @@
         .link-container {
             background-color: transparent; 
             backdrop-filter: blur(32px); /* Glass effect */   
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             display: flex;
-            flex-direction: column; /* Stack content vertically */
+            flex-direction: row; /* Stack content vertically */
             max-width: 720px; /* Smaller max-width for a more compact layout */
             width: 100%; /* Ensure responsiveness */
             padding: 20px; /* Padding inside the container */
@@ -53,14 +53,30 @@
     </style>
 
 <body>
-    <div class="link-container">
-        <p>
-            <ul>
-                <li style="color: aliceblue;">Digital Learning Hub <a href="https://www.dlh.lu" target="_blank"> dlh.lu</dlh></a> </li> 
-                <li style="color: aliceblue;">W3Schools <a href="https://www.w3schools.com/" target="_blank"> w3schools.com</a></li>
-                <li style="color: aliceblue;">Free Frontend <a href="https://freefrontend.com" target="_blank"> freefrontend.com</a></li>
-                <li style="color: aliceblue;">Free Images <a href="https://pixabay.com/" target="_blank"> pixabay.com</a></li>
-            </ul>
-        </p>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <div class="link-container">
+            <p>
+                <ul>
+                    <h3 style="color: rgb(10, 190, 46);"><bold>ADEM</h3>
+                    <h4 style="color: rgb(10, 190, 46);"><bold>Financial help for employeurs and contact information</h4>
+                    <li style="color: aliceblue;"><a href="https://adem.public.lu/en/employeurs/demander-aides-financieres/embaucher_cld.html" target="_blank" style="color: antiquewhite;"> Reintegration of long-term unemployed jobseekers </a> </li> 
+                    <li style="color: aliceblue;"><a href="https://adem.public.lu/en/employeurs/demander-aides-financieres/embaucher_de_45-ans/contrat-reinsertion-emploi-employeur.html" target="_blank" style="color: antiquewhite;"> Employment reintegration contract (CRE)</a></li>
+                    <li style="color: aliceblue;"><a href="https://adem.public.lu/en/employeurs/demander-aides-financieres/stage-professionnalisation-employeur.html" target="_blank" style="color: antiquewhite;"> Offering a professionalisation internship to a jobseeker (SP)</a></li>
+                    <li style="color: aliceblue;"><a href="https://adem.public.lu/dam-assets/fr/employeurs/conseillers-employeurs-liste.pdf" target="_blank" style="color: antiquewhite;"> List of contacts</a></li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="link-container">
+            <p>
+                <ul>
+                    <h3 style="color: rgb(10, 190, 46);"><bold>Other interesting websites</h3>
+                    <li><a href="https://www.dlh.lu" target="_blank">IT Courses in Belval - dlh.lu</a> </li> 
+                    <li><a href="https://www.w3schools.com/" target="_blank">Online IT Courses and Tutorials - w3schools.com</a></li>
+                    <li><a href="https://freefrontend.com" target="_blank">Free Content for Frontend Developpement - freefrontend.com</a></li>
+                    <li><a href="https://pixabay.com/" target="_blank">Free downloadable Images - pixabay.com</a></li>            
+                </ul>
+            </p>
+        </div>
     </div>
 </body>
