@@ -72,7 +72,7 @@ function processGuess() {
     guessHistory.innerHTML += `<p>Attempt ${attempts}: ${userGuess} - ${resultString}</p>`;
 
     if (correctPositions === 4) {
-        resultDisplay.textContent = `Congratulations, ${playerName}! You guessed it in ${attempts} attempts!`;
+        resultDisplay.textContent = `Congratulations ! You only used ${attempts} attempts!`;
         guessButton.disabled = true;
         restartButton.style.display = 'block';
     }
