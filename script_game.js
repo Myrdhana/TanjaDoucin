@@ -7,9 +7,9 @@ function startGame() {
     let userCompany = localStorage.getItem("userCompany");
 
     if (playerName && userCompany) {
-        document.getElementById('greeting').textContent = `Hello, ${playerName} from ${userCompany}! Let's play.`;
+        document.getElementById('greeting').textContent = `Hello, ${playerName} from ${userCompany}! Time for a little break.`;
     } else {
-        document.getElementById('greeting').textContent = 'Hello! Let’s play.';
+        document.getElementById('greeting').textContent = 'Hello! Time for a little break.';
     }
 
     randomNumber = String(Math.floor(Math.random() * 9000) + 1000);
