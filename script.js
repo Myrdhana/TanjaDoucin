@@ -1,6 +1,41 @@
 if (!localStorage.getItem('promptSequenceShown')) {
     // Check if user data already exists
     if (!localStorage.getItem("userName") || !localStorage.getItem("userCompany")) {
+   // Function to load the navbar dynamically
+function loadNavbar() {
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading navbar:', error);
+        });
+}
+
+// Ensure the navbar is loaded on each page
+loadNavbar();
+
+//Function to load footer dynamically
+function loadFooter() {
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading footer:', error);
+        });
+}
+
+//Ensure the footer is loaded on each page
+loadFooter();
+
+
+// Check if the prompt sequence has already been shown
+if (!localStorage.getItem('promptSequenceShown')) {
+    // Check if user data (name and company) already exists
+    if (!localStorage.getItem("userName") || !localStorage.getItem("userCompany")) {
         // Prompt the user for their name
         const userName = prompt("Hello and welcome to my page. I'm Tanja Doucin, and I'd love to share some of my work with you. Could you please tell me your name? (I won't share it)");
         
@@ -54,4 +89,6 @@ const userCompany = localStorage.getItem("userCompany");
 
 if (userName && userCompany) {
     saveUserDataToStorage(userName, userCompany);
+} else {
+    saveUserDataToStorage("NA", "NA");
 }
