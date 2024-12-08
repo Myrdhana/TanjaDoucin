@@ -5,35 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess a Number</title>
     <link rel="stylesheet" href="styles_game.css">
+    <script src="script_game.js"></script>
+
     <style>
         body {
             background-image: url(images/background_game.png) ;
-            background-size:cover ; /* "Cover ensures the image covers the whole body */
-            background-position: center; /* Centers the image */
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-            margin: 10px;
-            padding-top: 50px;
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Ensure the body takes the full height of the screen */
+            display: block;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */       
+            
         }
         
 
-        .container {
+        .game-container {
             background-color: transparent ; 
             backdrop-filter: blur(16px);    
-            justify-content:center;
-            align-items: center;
-            min-height: fit-content;
-            min-width: fit-content;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            padding-left: 100px;
-            padding-right: 100px;
-            margin-top: 100px; 
-            margin-left: 80px;
-            margin-right: 80px;
+            display: flex;
+            flex-direction: column; /* Stack content vertically */
+            max-width: 720px; /* Smaller max-width for a more compact layout */
+            width: 100%; /* Ensure responsiveness */
+            padding: 20px; /* Padding inside the container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Optional shadow for effect */
+            border-radius: 10px; /* Rounded corners */
+                            
+            margin-top: 10%;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
+            gap: 20px;
+            text-align: justify;
         }
 
         input {
@@ -70,7 +75,27 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <nav id="navbar">
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+            <img src="images/Tanja 2024.jpg" alt="Profile Picture">
+            <span>Tanja Doucin</span>
+        </div>
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="Competences-Skills.html" target="content">Competences & Skills</a></li>
+            <li><a href="Experience.html" target="content">Experience</a></li>
+            <li><a href="Education.html" target="content">Education</a></li>
+            <li><a href="Contact_Me.html" target="content">Contact Me</a></li>
+            <li><a href="Links.html" target="content">Links</a></li>
+            <li><a href="game.html" target="content">Let's Play</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Page content goes here -->
+    <section>
+    <div class="game-container">
         <h1>Guess A Number</h1>
         <p id="greeting"></p> <!-- Personalized greeting element -->
         <p>Let's play. Guess a number between 1000 and 9999.</p>
@@ -81,5 +106,10 @@
         <button id="restartButton" style="display:none;">Restart Game</button>
     </div>
     <script src="script_game.js"></script>
+    </section>
+        <!-- Footer -->
+        <div id="footer-container">
+            <p>&copy; 2024 Tanja Doucin. All rights reserved. - Special thanks to Vanessa for all the help provided.</p>
+        </div>
 </body>
 </html>
