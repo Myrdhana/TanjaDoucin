@@ -8,40 +8,33 @@
     
     <title>Links</title>
 
-        <!-- CDN link to Bootstrap 4: -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 
   <style>
         body {
             background-image:url(images/background_links.jpg); 
-            background-size: cover; /* Ensures the image covers the whole body */
-            background-position: center; /* Centers the image */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Ensure the body takes the full height of the screen */
+            display: block;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
         }
 
         /* Custom container for this page */
         .link-container {
             background-color: transparent; 
             backdrop-filter: blur(32px); /* Glass effect */   
-            justify-content: left;
-            align-items: center;
             display: flex;
-            flex-direction: row; /* Stack content vertically */
-            max-width: 720px; /* Smaller max-width for a more compact layout */
+            flex-direction: column; /* Stack content vertically */
+            max-width: 600px; /* Smaller max-width for a more compact layout */
+            height: 100%;
             width: 100%; /* Ensure responsiveness */
-            padding: 20px; /* Padding inside the container */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Optional shadow for effect */
             border-radius: 10px; /* Rounded corners */
+            align-items: center; /* Vertically center the content */
+            justify-content: center; /* Horizontally center the content */
         }
 
         /* Responsive adjustment for smaller screens */
@@ -53,6 +46,11 @@
     </style>
 
 <body>
+    <!-- Navbar will be loaded here -->
+    <div id="navbar-container"></div>
+
+    <!-- Page content goes here -->
+    <section>
     <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
         <div class="link-container">
             <p>
@@ -62,7 +60,7 @@
                     <li style="color: aliceblue;"><a href="https://adem.public.lu/en/employeurs/demander-aides-financieres/embaucher_cld.html" target="_blank" style="color: antiquewhite;"> Reintegration of long-term unemployed jobseekers </a> </li> 
                     <li style="color: aliceblue;"><a href="https://adem.public.lu/en/employeurs/demander-aides-financieres/embaucher_de_45-ans/contrat-reinsertion-emploi-employeur.html" target="_blank" style="color: antiquewhite;"> Employment reintegration contract (CRE)</a></li>
                     <li style="color: aliceblue;"><a href="https://adem.public.lu/en/employeurs/demander-aides-financieres/stage-professionnalisation-employeur.html" target="_blank" style="color: antiquewhite;"> Offering a professionalisation internship to a jobseeker (SP)</a></li>
-                    <li style="color: aliceblue;"><a href="https://adem.public.lu/dam-assets/fr/employeurs/conseillers-employeurs-liste.pdf" target="_blank" style="color: antiquewhite;"> List of contacts</a></li>
+                    <li style="color: aliceblue;"><a href="https://adem.public.lu/dam-assets/fr/employeurs/conseillers-employeurs-liste.pdf" target="_blank" style="color: antiquewhite;"> List of ADEM contacts for employeurs</a></li>
                 </ul>
             </p>
         </div>
@@ -79,4 +77,8 @@
             </p>
         </div>
     </div>
+    </section>
+        <!-- Footer -->
+        <div id="footer-container"></div>
 </body>
+</html>
