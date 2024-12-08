@@ -36,3 +36,74 @@ button {
 #guessHistory {
     margin-top: 20px;
 }
+
+/* Navbar Styling */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 20px;
+    color: grey;
+    font-family: Arial, sans-serif;
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-picture img {
+    width: 30px;
+    height: 40px;
+    border-radius: 50%; /* Oval Shape */
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: grey;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    background-color: #a4caf7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* Footer styling (consistent background color with navbar) */
+#footer-container {
+    background-color: black; /* Same as navbar */
+    color: gray;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
