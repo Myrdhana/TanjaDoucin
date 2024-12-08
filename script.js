@@ -1,7 +1,4 @@
-if (!localStorage.getItem('promptSequenceShown')) {
-    // Check if user data already exists
-    if (!localStorage.getItem("userName") || !localStorage.getItem("userCompany")) {
-   // Function to load the navbar dynamically
+// Function to load the navbar dynamically
 function loadNavbar() {
     fetch('navbar.html')
         .then(response => response.text())

@@ -1,21 +1,35 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    background-image: url(images/background_game.png) ;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensure the body takes the full height of the screen */
+    display: block;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */  
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.game-container {
+    background-color: transparent ; 
+    backdrop-filter: blur(16px);    
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    max-width: 720px; /* Smaller max-width for a more compact layout */
+    width: 100%; /* Ensure responsiveness */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Optional shadow for effect */
+    border-radius: 10px; /* Rounded corners */
+   
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    gap: 20px;
+    text-align: justify;
 }
-
 input {
     padding: 10px;
     width: 50%;
@@ -26,15 +40,31 @@ button {
     padding: 10px 20px;
     margin-top: 10px;
     cursor: pointer;
-}
-
-#result {
-    margin-top: 20px;
+    color: cyan;
+    font-size: large;
     font-weight: bold;
+    color:rgb(52, 52, 245) ;
 }
 
 #guessHistory {
-    margin-top: 20px;
+    max-height: 300px; /* Set a maximum height for the guess history container */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    margin-top: 5px; /* Add some spacing between elements */
+    padding: 10px; /* Add padding for a better layout */
+    border-radius: 5px; /* Optional rounded corners for a nice look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Optional shadow for effect */
+    width: 350px; /* Adjust width to fit lines neatly */
+}
+
+#result {
+    margin-top: auto;
+    font-weight: bold;
+    color:red;
+    font-size: x-large;
+}
+
+h5 {
+    color: blue;
 }
 
 /* Navbar Styling */

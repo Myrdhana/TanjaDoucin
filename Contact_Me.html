@@ -25,25 +25,37 @@
             background-color: transparent; 
             backdrop-filter: blur(64px); /* Glass effect */   
             display: flex;
-            flex-direction: column; /* Stack content vertically */
-            max-width: 720px; /* Smaller max-width for a more compact layout */
+            flex-direction: row;
+            max-width: 1080px;
             width: 100%; /* Ensure responsiveness */
             padding: 20px; /* Padding inside the container */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Optional shadow for effect */
-            border-radius: 10px; /* Rounded corners */
-                            
+            border-radius: 10px; /* Rounded corners */               
             margin-top: 10%;
-            margin-bottom: auto;
             margin-left: auto;
             margin-right: auto;
             align-items: center; /* Vertically center the content */
             justify-content: center; /* Horizontally center the content */
             gap: 20px;
-            text-align: justify;
         }
+
+        .contact-container img {
+        width: 90%;
+        height: auto;
+        border-radius: 50%; /* Ensure the image is circular */
+        }
+
+        .contact-info {
+            color: lightblue;
+            text-align: left;
+        }
+
+        .contact-info p {
+            color: rgb(86, 86, 139);
+        }
+
     </style> 
- 
-</head>
+ </head>
 
 <body>
     <!-- Navbar will be loaded here -->
@@ -51,44 +63,31 @@
 
     <!-- Page content goes here -->
     <section>
-
-
-    <div class="contact-container">
-        <div class="row w-100";>
-
-            <div class="col-5 d-flex" style="flex: 0 0 50%;" >
-                <img src="images/contactme.png" alt="Contact Data" width="90%" height="90%" class="img-fluid; rounded-circle">
+        <div class="contact-container">
+            <div>
+                <img src="images/contactme.png" alt="Contact Data" class="img-fluid rounded-circle">
             </div>
-
-            <div class="col-7">
-                <div class="row" style="margin-inline-start: 25px;";>
-                    <div class="col-12">
-                            <p style="color: lightblue"> <br>
-                                <strong>
-                                Tanja Doucin
-                                <br>
-                                7, rue Ernest Renan 
-                                <br>
-                                54190 Villerupt
-                                <br>
-                                France 
-                                </strong>
-                            </p>
-                      
-                            <p style="color: rgb(86, 86, 139);">  ✆ 0033 661 340 815
-                            <br>
-                            <img src="images/PC.jpg " alt="E-Mail : " width="10" height="10"> tanja.doucin@wanadoo.fr</a>
-                            </p>
-                    </div>
-                </div>
+            <div class="contact-info">
+                <p>
+                    <strong>
+                        Tanja Doucin
+                        <br>
+                        7, rue Ernest Renan
+                        <br>
+                        54190 Villerupt
+                        <br>
+                        France
+                    </strong>
+                </p>
+                <p> <span style="color: black;"> ✆</span> 0033 661 340 815
+                    <br>
+                    🖥️  tanja.doucin@wanadoo.fr
+                </p>
             </div>
-
-        </div>   
-    </div>
+        </div>
     </section>
        <!-- Footer -->
        <div id="footer-container"></div>
     
 </body>
 </html>
-

@@ -5,74 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess a Number</title>
     <link rel="stylesheet" href="styles_game.css">
-    <script src="script_game.js"></script>
-
-    <style>
-        body {
-            background-image: url(images/background_game.png) ;
-            background-size: cover;
-            background-position: center;
-            height: 100vh; /* Ensure the body takes the full height of the screen */
-            display: block;
-            justify-content: center; /* Horizontally center */
-            align-items: center; /* Vertically center */       
-            
-        }
-        
-
-        .game-container {
-            background-color: transparent ; 
-            backdrop-filter: blur(16px);    
-            display: flex;
-            flex-direction: column; /* Stack content vertically */
-            max-width: 720px; /* Smaller max-width for a more compact layout */
-            width: 100%; /* Ensure responsiveness */
-            padding: 20px; /* Padding inside the container */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Optional shadow for effect */
-            border-radius: 10px; /* Rounded corners */
-                            
-            margin-top: 10%;
-            margin-bottom: auto;
-            margin-left: auto;
-            margin-right: auto;
-            align-items: center; /* Vertically center the content */
-            justify-content: center; /* Horizontally center the content */
-            gap: 20px;
-            text-align: justify;
-        }
-
-        input {
-            padding: 10px;
-            width: 50%;
-            margin-top: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
-            color: cyan;
-            font-size: large;
-            font-weight: bold;
-            color:rgb(52, 52, 245) ;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-weight: bold;
-            color:red;
-            font-size: x-large;
-        }
-
-        #guessHistory {
-            margin-top: 20px;
-        }
-
-        h1 {
-            color: blue;
-        }
-
-    </style>
 </head>
 <body>
     <nav id="navbar">
@@ -91,25 +23,24 @@
             <li><a href="game.html" target="content">Let's Play</a></li>
         </ul>
     </nav>
-    
 
     <!-- Page content goes here -->
     <section>
-    <div class="game-container">
-        <h1>Guess A Number</h1>
-        <p id="greeting"></p> <!-- Personalized greeting element -->
-        <p>Let's play. Guess a number between 1000 and 9999.</p>
-        <input type="number" id="guessInput" placeholder="Enter your guess" max="9999" min="1000" />
-        <button id="guessButton">Guess</button>
-        <p id="result"></p>
-        <div id="guessHistory"></div>
-        <button id="restartButton" style="display:none;">Restart Game</button>
+        <div class="game-container">
+            <p id="greeting"></p> <!-- Personalized greeting element -->
+            <p>Let's play. Guess a number between 1000 and 9999.</p>
+            <!-- Change input type to 'tel' for numeric input -->
+            <input type="tel" id="guessInput" placeholder="Enter your guess" maxlength="4" />
+            <button id="guessButton">Guess</button>
+            <p id="result"></p>
+            <div id="guessHistory"></div>
+            <button id="restartButton" style="display:none;">Restart Game</button>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div id="footer-container">
+        <p>&copy; 2024 Tanja Doucin. All rights reserved. - Special thanks to Vanessa for all the help provided.</p>
     </div>
     <script src="script_game.js"></script>
-    </section>
-        <!-- Footer -->
-        <div id="footer-container">
-            <p>&copy; 2024 Tanja Doucin. All rights reserved. - Special thanks to Vanessa for all the help provided.</p>
-        </div>
 </body>
 </html>
